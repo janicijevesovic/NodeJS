@@ -11,3 +11,4 @@ sayHi(names.john);
 sayHi('Susan');
 sayHi(names.jim);
 console.log(data);
+console.log('Test1');
