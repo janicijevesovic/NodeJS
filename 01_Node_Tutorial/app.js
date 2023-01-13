@@ -1,27 +1,11 @@
-const { readFile, writeFile } = require('fs');
+//npm i
+// npm install -g (global)
 
-readFile('./content/first.txt', 'utf8', (err, result) => {
-	if (err) {
-		console.log(err);
-		return;
-	}
-	const first = result;
-	readFile('./content/second.txt', 'utf8', (err, result) => {
-		if (err) {
-			console.log(err);
-			return;
-		}
-		const second = result;
-		writeFile(
-			'./content/result-async.txt',
-			`Here is the async result: ${first}, ${second}`,
-			(err, result) => {
-				if (err) {
-					console.log(err);
-					return;
-				}
-				console.log(result);
-			}
-		);
-	});
-});
+//npm init (step by step)
+//npm init -y (everything default)
+
+const _ = require('lodash');
+
+const items = [1, [2, [3, [4]]]];
+const newItems = _.flattenDeep(items);
+console.log(newItems);
