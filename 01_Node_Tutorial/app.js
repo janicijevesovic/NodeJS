@@ -1,12 +1,15 @@
-//npm i
-// npm install -g (global)
+const http = require('http');
 
-//npm init (step by step)
-//npm init -y (everything default)
+// const server = http.createServer((req, res) => {
+//   res.end('Welcome')
+// })
 
-const _ = require('lodash');
+// Using Event Emitter API
+const server = http.createServer();
+// emits request event
+// subcribe to it / listen for it / respond to it
+server.on('request', (req, res) => {
+	res.end('Welcome');
+});
 
-const items = [1, [2, [3, [4]]]];
-const newItems = _.flattenDeep(items);
-console.log(newItems);
-console.log('Hello There!');
+server.listen(5000);
